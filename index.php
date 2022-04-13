@@ -2,11 +2,11 @@
 $fileNames=[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks"];
 
 if(isset($_POST['create'])){
-  if(!in_array($_POST['newFileName'],scandir('/var/www'))){
+  //if(!in_array($_POST['newFileName'],scandir('/var/www'))){
     touch($_POST['newFileName']);
-  }else{
-    echo "<p class='alert'>This File Already Exists!</p>";
-  }
+//   }else{
+//     echo "<p class='alert'>This File Already Exists!</p>";
+//   }
 }elseif(isset($_POST['read'])){
     $file=fopen($_GET['fileName'],'r+');
 
