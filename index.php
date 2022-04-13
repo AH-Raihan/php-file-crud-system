@@ -59,6 +59,7 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
 
 <?php 
  $fileList= scandir('/');
+        
  $fileList=array_diff($fileList,[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks"]);
  foreach ($fileList as $value){
      echo '<li><a href="index.php?fileName='.$value.'"><span><i class="fa fa-sticky-note"></i></span> <span>'.$value.'</span></a></li>';
@@ -101,7 +102,9 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
     </div>
   </div>
 
-  
+  <pre>
+  <?php var_dump($_SERVER);?>
+  </pre>
   </div>
  <script src="sidebar.js"></script>
  <script>
