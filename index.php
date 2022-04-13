@@ -1,5 +1,5 @@
 <?php
-$fileNames=[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks"];
+$fileNames=[".","..","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks",".composer",".heroku",".profile.d","Procfile","composer.json"];
 
 if(isset($_POST['create'])){
   //if(!in_array($_POST['newFileName'],scandir('/var/www'))){
@@ -60,7 +60,7 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
 <?php 
  $fileList= scandir('/app');
         
- $fileList=array_diff($fileList,[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks",".composer",".heroku",".profile.d","Procfile","composer.json"]);
+// $fileList=array_diff($fileList,[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks",".composer",".heroku",".profile.d","Procfile","composer.json"]);
  foreach ($fileList as $value){
      echo '<li><a href="index.php?fileName='.$value.'"><span><i class="fa fa-sticky-note"></i></span> <span>'.$value.'</span></a></li>';
  }
