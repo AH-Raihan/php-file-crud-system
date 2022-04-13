@@ -2,7 +2,7 @@
 $fileNames=[".","..",".composer",".heroku",".profile.d","Procfile","composer.json","custom.css","index.php","sidebar.js","style.css","vendor"];
 
 if(isset($_POST['create'])){
-  if(!in_array($_POST['newFileName'],scandir('/var/www'))){
+  if(!in_array($_POST['newFileName'],scandir('/app'))){
     touch($_POST['newFileName']);
   }else{
     echo "<p class='alert'>This File Already Exists!</p>";
