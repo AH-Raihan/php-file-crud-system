@@ -58,7 +58,7 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
         <li class="active"><a href="/"><span><i class="fa fa-home"></i></span> <span>Home</span></a></li>
 
 <?php 
- $fileList= scandir('/');
+ $fileList= scandir('/app');
         
  $fileList=array_diff($fileList,[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks"]);
  foreach ($fileList as $value){
@@ -102,9 +102,7 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
     </div>
   </div>
 
-  <pre>
-  <?php var_dump($_SERVER);?>
-  </pre>
+
   </div>
  <script src="sidebar.js"></script>
  <script>
