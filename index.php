@@ -1,12 +1,12 @@
 <?php
-$fileNames=[".","..","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks",".composer",".heroku",".profile.d","Procfile","composer.json"];
+$fileNames=[".","..",".composer",".heroku",".profile.d","Procfile","composer.json","custom.css","index.php","sidebar.js","style.css","vendor"];
 
 if(isset($_POST['create'])){
-  //if(!in_array($_POST['newFileName'],scandir('/var/www'))){
+  if(!in_array($_POST['newFileName'],scandir('/var/www'))){
     touch($_POST['newFileName']);
-//   }else{
-//     echo "<p class='alert'>This File Already Exists!</p>";
-//   }
+  }else{
+    echo "<p class='alert'>This File Already Exists!</p>";
+  }
 }elseif(isset($_POST['read'])){
     $file=fopen($_GET['fileName'],'r+');
 
@@ -60,7 +60,7 @@ file_put_contents($_GET['fileName'],$_POST['texts']);
 <?php 
  $fileList= scandir('/app');
         
-// $fileList=array_diff($fileList,[".","..",".env",".gitignore",".home","composer.lock","database.sqlite","vendor","style.css","sidebar.js","custom.css","index.php","php5-fpm","bas",".socks",".composer",".heroku",".profile.d","Procfile","composer.json"]);
+$fileList=array_diff($fileList,[".","..",".composer",".heroku",".profile.d","Procfile","composer.json","custom.css","index.php","sidebar.js","style.css","vendor"]);
  foreach ($fileList as $value){
      echo '<li><a href="index.php?fileName='.$value.'"><span><i class="fa fa-sticky-note"></i></span> <span>'.$value.'</span></a></li>';
  }
